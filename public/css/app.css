@@ -1,0 +1,309 @@
+:root {
+    --sidebar-width: 260px;
+    --brand-color: #e2001a;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+[data-bs-theme="dark"] body,
+[data-bs-theme="dark"] {
+    background-color: #10131a;
+}
+
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ============ Sidebar ============ */
+.sidebar {
+    width: var(--sidebar-width);
+    background: #ffffff;
+    color: #333;
+    border-right: 1px solid rgba(0,0,0,.07);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 18px;
+    font-weight: 700;
+    color: #000;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+}
+
+.sidebar-brand i {
+    color: var(--brand-color);
+    font-size: 1.4rem;
+}
+
+.sidebar-brand svg {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+}
+
+.sidebar-brand > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidebar-nav {
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-nav .nav-link {
+    color: #495057;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .92rem;
+    transition: background .15s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: rgba(0,0,0,.04);
+    color: #000;
+}
+
+.sidebar-nav .nav-link.active {
+    background: var(--brand-color);
+    color: #fff;
+}
+
+.nav-section-title {
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: .06em;
+    color: #6c757d;
+    padding: 16px 14px 4px;
+}
+
+/* Dark Mode Sidebar Overrides */
+[data-bs-theme="dark"] .sidebar {
+    background: #16181f;
+    color: #d7d9e0;
+    border-right: none;
+}
+[data-bs-theme="dark"] .sidebar-brand {
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+[data-bs-theme="dark"] .sidebar-nav .nav-link {
+    color: #b7bac4;
+}
+[data-bs-theme="dark"] .sidebar-nav .nav-link:hover {
+    background: rgba(255,255,255,.06);
+    color: #fff;
+}
+[data-bs-theme="dark"] .nav-section-title {
+    color: #6c7080;
+}
+
+/* ============ Main content ============ */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background: var(--bs-body-bg);
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.page-content {
+    padding: 24px;
+    flex: 1;
+}
+
+.avatar-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--brand-color);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+/* ============ Stat cards ============ */
+.stat-card {
+    border: none;
+    border-radius: 14px;
+    color: #fff;
+    padding: 20px;
+}
+
+.stat-card .stat-icon {
+    font-size: 1.8rem;
+    opacity: .85;
+}
+
+.stat-card.bg-blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.stat-card.bg-green { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.stat-card.bg-orange { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.stat-card.bg-red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+/* ============ Guest (auth) pages ============ */
+.guest-body {
+    background: linear-gradient(135deg, #1a1d29, #2b0f13);
+    min-height: 100vh;
+}
+
+.guest-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.guest-card {
+    background: var(--bs-body-bg);
+    border-radius: 16px;
+    padding: 36px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.guest-logo {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    color: var(--brand-color);
+}
+
+.sidebar-brand svg {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+}
+
+/* ============ Misc ============ */
+.table-thumb {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ============ Pagination ============ */
+.pagination {
+    gap: 4px;
+}
+
+.pagination .page-link {
+    color: #000;
+    border-color: rgba(0,0,0,.2);
+    background-color: transparent;
+}
+
+.pagination .page-link:hover {
+    background-color: rgba(0,0,0,.1);
+    color: #000;
+    border-color: rgba(0,0,0,.3);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+    color: #fff;
+}
+
+.pagination .page-link:disabled {
+    background-color: transparent;
+    color: #6c7080;
+    border-color: rgba(0,0,0,.1);
+}
+
+/* Pagination info text - Force warna hitam di dark mode */
+[data-bs-theme="dark"] .text-muted {
+    color: #000 !important;
+}
+
+[data-bs-theme="dark"] .small {
+    color: #000 !important;
+}
+
+/* Alternatif selector untuk pagination info */
+.card-footer .text-muted {
+    color: #000 !important;
+}
+
+/* ============ Text Muted - Fleksibel dengan Tema ============ */
+/* Light mode - abu-abu */
+[data-bs-theme="light"] .text-muted {
+    color: #6c757d !important;
+}
+
+/* Dark mode - putih */
+[data-bs-theme="dark"] .text-muted {
+    color: #e0e0e0 !important;
+}
+
+/* ============ Dark Mode Text Colors ============ */
+/* Product names, borrower names - pastikan terlihat di dark mode */
+[data-bs-theme="dark"] .small,
+[data-bs-theme="dark"] .fw-semibold.small {
+    color: #e0e0e0 !important;
+}
+
+/* Table cells - pastikan terlihat di dark mode */
+[data-bs-theme="dark"] .table tbody td {
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .table tbody td .small {
+    color: #e0e0e0 !important;
+}
+
+/* Card body text */
+[data-bs-theme="dark"] .card-body .small {
+    color: #e0e0e0 !important;
+}
+
+[data-bs-theme="dark"] .card-body .fw-semibold.small {
+    color: #fff !important;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        z-index: 1050;
+        transition: left .2s ease;
+    }
+    .sidebar.show {
+        left: 0;
+    }
+}

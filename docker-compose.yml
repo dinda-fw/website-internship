@@ -1,0 +1,74 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: inventaris_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    environment:
+      DB_HOST: db
+      DB_DATABASE: inventaris_telkomsel
+      DB_USERNAME: inventaris_user
+      DB_PASSWORD: secret
+    depends_on:
+      - db
+    networks:
+      - inventaris_network
+
+  webserver:
+    image: nginx:stable-alpine
+    container_name: inventaris_nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - inventaris_network
+
+  db:
+    image: mysql:8.0
+    container_name: inventaris_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: inventaris_telkomsel
+      MYSQL_USER: inventaris_user
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root_secret
+    ports:
+      - "3306:3306"
+    volumes:
+      - inventaris_db_data:/var/lib/mysql
+    networks:
+      - inventaris_network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: inventaris_phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root_secret
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - inventaris_network
+
+networks:
+  inventaris_network:
+    driver: bridge
+
+volumes:
+  inventaris_db_data:
+    driver: local
