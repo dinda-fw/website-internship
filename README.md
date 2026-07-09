@@ -5,21 +5,6 @@ Aplikasi web untuk mengelola inventaris kantor (master barang, peminjaman, dan l
 ---
 link : https://website-internship-production.up.railway.app
 
-## Daftar Isi
-
-1. [Tech Stack](#tech-stack)
-2. [Struktur Proyek Ini](#struktur-proyek-ini)
-3. [Cara Instalasi](#cara-instalasi)
-4. [Cara Menjalankan Project](#cara-menjalankan-project)
-5. [Akun Login Testing](#akun-login-testing)
-6. [Fitur Aplikasi](#fitur-aplikasi)
-7. [Arsitektur Aplikasi](#arsitektur-aplikasi)
-8. [Alur Database (ERD)](#alur-database-erd)
-9. [Alasan Penggunaan Fitur Laravel](#alasan-penggunaan-fitur-laravel)
-10. [Menjalankan dengan Docker](#menjalankan-dengan-docker-opsional)
-11. [Deployment](#deployment)
-12. [Troubleshooting](#troubleshooting)
-
 ---
 
 ## Tech Stack
