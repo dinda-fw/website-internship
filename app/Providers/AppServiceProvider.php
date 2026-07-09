@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Paginator::useBootstrapFive();
         // <-- Tambahkan blok kode ini
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
