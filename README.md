@@ -3,6 +3,7 @@
 Aplikasi web untuk mengelola inventaris kantor (master barang, peminjaman, dan laporan) dibangun dengan **Laravel 11**, dibuat untuk Menjawab masalah: kehilangan data aset, duplikasi pencatatan barang, sulitnya memantau stok, dan lambatnya pembuatan laporan — semua dikelola dalam satu sistem terpusat berbasis role (Admin, Staff, Manager).
 
 ---
+link : https://website-internship-production.up.railway.app
 
 ## Daftar Isi
 
